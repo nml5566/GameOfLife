@@ -19,8 +19,9 @@ Updated Summer 2010, Tiago Sommer Damasceno and
 #include <stdbool.h>  // For true/false
 #include <getopt.h>   // For argument processing
 #include <stdio.h>    // For file i/o
+#include <string.h>   // For strcmp
 
-int               init (struct life_t * life, int * c, char *** v);
+void               init (struct life_t * life, int * c, char *** v);
 void        eval_rules (struct life_t * life);
 void       copy_bounds (struct life_t * life);
 void       update_grid (struct life_t * life);
@@ -39,7 +40,7 @@ void             usage ();
 	init_env()
 		Initialize runtime environment.
 */
-int init (struct life_t * life, int * c, char *** v) {
+void init (struct life_t * life, int * c, char *** v) {
 	int argc          = *c;
 	char ** argv      = *v;
 	life->size        = 1;
