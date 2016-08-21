@@ -11,7 +11,7 @@
 # Variables and Flags
 #
 
-NO_X11 = 1
+#NO_X11 = 1
 
 CC        = gcc
 
@@ -24,6 +24,7 @@ SRCS      = Life.c
 ifndef NO_X11
 LIBS     += -lX11
 LDFLAGS  += -L/usr/X11R6/lib
+CFLAGS   += -I/usr/X11R6/include
 else
 CFLAGS   += -DNO_X11
 endif
